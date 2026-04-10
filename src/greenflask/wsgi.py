@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Blueprint, render_template
 from greenhaus.main import do_shutdown, change_setting, water, light, camera_capture, create_video
 
 #welcome to hell
@@ -6,5 +6,5 @@ from greenhaus.main import do_shutdown, change_setting, water, light, camera_cap
 app = Flask(__name__)
 
 @app.route("/")
-def stuck_in_the_ninties():
-  return "<p>We're stuck in the ninties.<p>"
+def main_page():
+  return render_template("mainpage.html")
