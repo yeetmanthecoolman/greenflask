@@ -1,1 +1,17 @@
-
+<!doctype html>
+<title>{% block title %}{% endblock %} - The Greenhouse Project</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Options</h1>
+  <ul>
+    {% block navigation %}
+      <li><a href="{{ url_for('change_setting.step1') }}">Settings</a>
+      <li><a href="{{ url_for('photogaphy.cameracontrol') }}">Camerae</a>
+      <li><a href="{{ url_for('water.beds') }}">Water control</a>
+      <li><a href="{{ url_for('light.lights') }}">Light control</a>
+    {% endblock %}
+  </ul>
+</nav>
+<section class="content">
+  {% block content %}{% endblock %}
+</section>
