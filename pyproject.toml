@@ -1,0 +1,35 @@
+#TODO: add classifiers
+
+[project]
+name = "greenflask"
+version = "0.0.0"
+description = "It's a python thing that provides a webpage for the Greenhaus."
+license = "AGPL-3.0"
+requires-python = ">=3.10,<4.0"#pygobject fails to install on 3.9
+authors = [ { name = "Frank J. Barth", email = "frank.barth@outlook.com" } ]
+maintainers = [ { name = "Benjamin Shrago", email = "bshrago@mcpasd.k12.wi.us" }, { name = "Phillip Spalitta", email = "sp29174@students.mcpasd.k12.wi.us" } ]
+keywords = [ "greenhouse", "automation", "the music of the spheres" ]
+dependencies = [ "greenhaus[camera,gpio,dev] @ https://github.com/yeetmanthecoolman/greenhaus.git@f415381", "Flask" ]
+readme = "README.md"
+
+#[project.scripts]
+#greenhaus = "greenhaus.main:app"
+
+#[project.optional-dependencies]
+#camera = ["opencv-python"]
+#gpio = [ "mcp3008>=1.0.0", "RPi.GPIO" ]#This group's days are numbered.
+#dev = [ "wheel", "poetry>=2.0.0" ]
+#gui = [ "PyGObject>=3.54.0" ]
+
+[build-system]
+requires = ["poetry-core>2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+homepage = "https://mcpasd.k12.wi.us/"
+repository = "https://github.com/yeetmanthecoolman/greenflask"
+documentation = "https://github.com/yeetmanthecoolman/greenflask/wiki"
+
+[tool.poetry]
+package-mode = true
+include = [ { path = "images", format = ["sdist", "wheel"] }, { path = "docs" } ]
